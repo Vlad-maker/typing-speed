@@ -1,0 +1,33 @@
+@import "../variables";
+
+.base-button {
+  display: block;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  padding: 0.5em 1.5em;
+  margin: 1em auto;
+  border-radius: 7px;
+  @media (min-width: 700px) {
+    padding: 0.7em 2em;
+  }
+}
+
+.dark-button {
+  color: $simple-white;
+  background-color: $primary-dark;
+  border: 2px solid transparent;
+  transition: 0.2s linear;
+
+  &:hover {
+    color: $primary-dark;
+    background-color: transparent;
+    border: 2px solid $decor-color;
+  }
+
+  &:active {
+    box-shadow: inset 2px 2px 5px 1px $primary-dark-rgb, 0.25;
+  }
+}
