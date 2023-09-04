@@ -1,7 +1,7 @@
 import React from "react";
 import { FunctionComponent } from "react";
-import logo from "../../assets/images/logo.svg";
-import "../../style/ui/header.css";
+import logo from "../../assets/img/logo.svg";
+import "../../style/ui/header.scss";
 
 const Header: FunctionComponent = () => {
   return (
@@ -9,7 +9,7 @@ const Header: FunctionComponent = () => {
       <div className="header-container">
         <img src={logo} alt="site logo" />
 
-        <h1 className="large-header">Typing Test</h1>
+        <h1 className="large-header">Typing Speed</h1>
       </div>
     </header>
   );
