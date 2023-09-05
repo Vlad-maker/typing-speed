@@ -4,7 +4,7 @@ import { FunctionComponent, ComponentPropsWithoutRef } from "react";
 // получить все атрибуты, которые есть у элемента <button>
 // и использовать их внутри компонента в качестве props.
 
-import "../../style/ui/buttons.scss";
+import "../../style/ui/button.scss";
 
 interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
   btnText: string;
