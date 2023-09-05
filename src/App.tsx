@@ -36,7 +36,7 @@ const App: FunctionComponent = () => {
         {isTestStarted ? (
           <Test />
         ) : (
-          <ModalWindow title="Take a typing speed test">
+          <ModalWindow title="Typing speed test">
             <Button btnText="Start" onClick={testStateToggler} />
           </ModalWindow>
         )}
