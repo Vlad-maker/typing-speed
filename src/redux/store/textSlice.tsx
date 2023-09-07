@@ -78,5 +78,20 @@ const textSlice = createSlice({
     setMistakes(state, action: PayloadAction<number>) {
       state.mistakes = action.payload;
     },
+    increasePressingCount(state) {
+      state.pressingCount = state.pressingCount + 1;
+    },
+    resetTextState(state) {
+      state.currentCharIndex = 0;
+      state.mistakes = 0;
+      state.pressingCount = 0;
+    },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(fetchText.pending, (state) => {
+      state.isLoading = true;
+      state.error = null;
+    });
+    //   .addCase();
   },
 });
