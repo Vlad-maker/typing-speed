@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import testReducer from "./testSlice";
+import textReducer from "./textSlice";
 
 const store = configureStore({
   reducer: {
     testSlice: testReducer,
+    textSlice: textReducer,
   },
 });
 
@@ -13,5 +15,6 @@ export default store;
 //  ReturnType, которая будет принимать определение типа метода getState, а
 // возвращать тип возвращаемого getState значения. Для определения
 // типа AppDispatch воспользуемся оператором typeof.
+
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

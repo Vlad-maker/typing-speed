@@ -88,10 +88,32 @@ const textSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchText.pending, (state) => {
-      state.isLoading = true;
-      state.error = null;
-    });
-    //   .addCase();
+    builder
+      .addCase(fetchText.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(fetchText.fulfilled, (state, action) => {
+        state.text = action.payload.split("").map((item, index) => {
+          return index === 0
+            ? { char: item, class: "curent-char" }
+            : { char: item, class: "" };
+        });
+        state.isLoading = false;
+      })
+      .addCase(fetchText.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      });
   },
 });
+
+export const {
+  setText,
+  setCurrentCharIndex,
+  setMistakes,
+  increasePressingCount,
+  resetTextState,
+} = textSlice.actions;
+
+export default textSlice.reducer;
