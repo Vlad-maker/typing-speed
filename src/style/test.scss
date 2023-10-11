@@ -1,0 +1,56 @@
+@import "./variables";
+
+.test-container {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 2em;
+  margin-bottom: 2em;
+}
+@media (min-width: 700px) {
+  .test-container {
+    flex-direction: row;
+    gap: 3em;
+  }
+}
+@media (min-width: 1280px) {
+  .test-container {
+    gap: 5em;
+  }
+}
+
+.test-text-wrapper {
+  background: $simple-white;
+  padding: 1em;
+  border-radius: 7px;
+  box-shadow: 0 0 10px 5px $decor-color-rgb, 0.25;
+}
+@media (min-width: 700px) {
+  .test-text-wrapper {
+    width: 100%;
+    min-height: 100%;
+    padding: 2em;
+    display: grid;
+    place-items: center;
+  }
+}
+
+.test-loading-text {
+  align-self: start;
+}
+
+.current-char,
+.wrong-char {
+  color: $primary-light;
+}
+
+.current-char {
+  background-color: $right-color;
+}
+
+.wrong-char {
+  background-color: $wrong-color;
+}
+
+.right-char {
+  color: $right-color;
+}

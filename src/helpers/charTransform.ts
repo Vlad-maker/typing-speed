@@ -1,5 +1,3 @@
-import { TextType } from "../types/types";
-
 // Начнем с функции getCurrentChar, на
 // вход она будет принимать массив типа TextType и индекс текущего элемента, а
 // возвращать новый массив типа TextType. Внутри самой функции будем перебирать
@@ -11,6 +9,8 @@ import { TextType } from "../types/types";
 // новое количество ошибок. Внутри функции делаем примерно тоже самое, проходим
 // по массиву, сравниваем индексы и проверяем, правильно ли нажата клавиша.
 
+import { TextType } from "../types/types";
+
 type GetCurrentCharType = (
   charsArray: TextType[],
   currentIndex: number
@@ -21,9 +21,14 @@ type CompareCharsType = (
   currentIndex: number,
   pressedKey: string,
   mistakes: number
-) => [resultArray: TextType[], currentIndex: number, mistakes: number];
+) => [resultArr: TextType[], currentIndex: number, mistakes: number];
 
-export const getCurrentChar: GetCurrentCharType = (сharsArray, currenIndex) => {
+type restoreTextType = (charsArray: TextType[]) => TextType[];
+
+export const getCurrentChar: GetCurrentCharType = (
+  charsArray,
+  currentIndex
+) => {
   return charsArray.map((item, index) => {
     if (index === currentIndex) {
       return {
@@ -64,4 +69,20 @@ export const compareChars: CompareCharsType = (
   });
 
   return [resultArr, newCurrentIndex, newMistakes];
+};
+
+export const restoreText: restoreTextType = (charsArray) => {
+  return charsArray.map((item, index) => {
+    if (index === 0) {
+      return {
+        ...item,
+        class: "current-char",
+      };
+    }
+
+    return {
+      ...item,
+      class: "",
+    };
+  });
 };
