@@ -1,1 +1,6 @@
 @import "./variables";
+
+.width {
+  @apply w-[200px];
+  foo: bar;
+}
