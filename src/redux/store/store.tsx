@@ -14,7 +14,7 @@ const store = configureStore({
 export default store;
 
 // Для RootState воспользуемся встроенной TypeScript утилитой –
-//  ReturnType, которая будет принимать определение типа метода getState, а
+// ReturnType, которая будет принимать определение типа метода getState, а
 // возвращать тип возвращаемого getState значения. Для определения
 // типа AppDispatch воспользуемся оператором typeof.
 
