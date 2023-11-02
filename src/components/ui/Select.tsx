@@ -2,7 +2,7 @@ import { ComponentPropsWithoutRef } from "react";
 
 import "../../style/ui/select.scss";
 
-// Тут нам также, как и в компоненте Button потребуется
+// Тут нам так-же, как и в компоненте Button потребуется
 // тип ComponentPropsWithoutRef, чтобы мы могли получить все атрибуты
 // элемента select. В качестве props компонент будет принимать значение по
 // умолчанию и массив значений. Возвращать будет один элемент select.
